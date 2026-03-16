@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montagem Soluções Master</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar com logo e menu -->
+  <nav class="navbar">
+    <div class="logo-menu">
+      <img src="logo.png.png" alt="Logo Montagem Soluções Master">
+      <ul>
+        <li><a href="#servicos" class="active">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cabeçalho -->
+  <header class="hero">
+    <h1>Transformamos sua casa</h1>
+    <p>Montagem de móveis e soluções inteligentes com qualidade, agilidade e confiança.</p>
+    <div class="cta">
+      <a href="#contato">Solicite um orçamento</a>
+    </div>
+  </header>
+
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <p>Montagem e Desmontagem de móveis, instalação de prateleiras, soluções de organização e pequenos reparos.</p>
+  </section>
+
+  <!-- Portfólio -->
+  <section id="portfolio">
+    <h2>Portfólio</h2>
+    <p>Confira alguns dos trabalhos já realizados:</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="mizael.jpeg.jpeg" alt="Montagem de guarda-roupa">
+        <p>Montagem de guarda-roupa</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/montagem2.jpg" alt="Instalação de prateleiras">
+        <p>Instalação de prateleiras</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/montagem3.jpg" alt="Organização de escritório">
+        <p>Organização de escritório</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Fale conosco pelo Telefone e agende sua montagem.</p>
+    <p><strong>Telefone:</strong> (96)99132-9948</p>
+    <a href="https://wa.me/5596991329948?text=Olá%20gostaria%20de%20um%20orçamento%20para%20montagem%20de%20móveis" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <div class="social">
+      <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=m53vkbo" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="mailto:mizaeloliveira1013@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2026 Montagem Soluções Master - Todos os direitos reservados</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=m53vkbo" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:mizaeloliveira1013@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/5596991329948?text=Olá%20gostaria%20de%20um%20orçamento%20para%20montagem%20de%20móveis" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <!-- Script para scroll suave -->
+  <script>
+    document.querySelectorAll('.logo-menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        document.querySelectorAll('.logo-menu a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
