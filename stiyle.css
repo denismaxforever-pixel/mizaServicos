@@ -1,94 +1,6 @@
-/* Responsividade */
-@media (max-width: 768px) {
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    background: #333;
-    padding: 10px;
-  }
-  .logo-menu.active ul {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
-}
-
-/* Imagens responsivas */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Fade-in */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Botão WhatsApp flutuante */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
-}
-.whatsapp-float i {
-  margin-top: 15px;
-}
-
-/* Modal da galeria */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 200;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
-}
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 80%;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-#caption {
-  text-align: center;
-  color: #ccc;
-  margin-top: 10px;
-}
-/* Feedback do formulário */
-#feedback {
-  display: none;
-  margin-top: 10px;
-  color: green;
-  font-weight: bold;
+/* Transição suave */
+body, .navbar, footer {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Dark Mode */
@@ -142,25 +54,30 @@ img {
 .dark-mode-toggle input:checked + .slider::before {
   transform: translateX(25px);
 }
-/* Transição suave para Dark Mode */
-body, .navbar, footer {
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+/* Feedback do formulário */
+#feedback {
+  display: none;
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
+/* Botão WhatsApp flutuante */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
 }
-
-.dark-mode a {
-  color: #25d366;
-}
-
-.dark-mode .navbar {
-  background-color: #222;
-}
-
-.dark-mode footer {
-  background-color: #222;
-  color: #ccc;
+.whatsapp-float i {
+  margin-top: 15px;
 }

@@ -1,5 +1,5 @@
 
-    // WhatsApp com feedback
+// WhatsApp com feedback
 function enviarWhatsApp() {
   var nome = document.getElementById("nome").value;
   var telefone = document.getElementById("telefone").value;
@@ -17,13 +17,18 @@ function enviarWhatsApp() {
   feedback.style.display = "block";
 }
 
-// Dark Mode
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+// Dark Mode com memória
+const switchDark = document.getElementById("switchDark");
+
+function aplicarPreferencia() {
+  if (localStorage.getItem("modo") === "escuro") {
+    document.body.classList.add("dark-mode");
+    switchDark.checked = true;
+  }
 }
+
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
-  // salva preferência
   if (document.body.classList.contains("dark-mode")) {
     localStorage.setItem("modo", "escuro");
   } else {
@@ -31,10 +36,8 @@ function toggleDarkMode() {
   }
 }
 
-// ao carregar a página, aplica preferência
-window.onload = function() {
-  if (localStorage.getItem("modo") === "escuro") {
-    document.body.classList.add("dark-mode");
-    document.getElementById("switchDark").checked = true;
-  }
-};
+// Inicializa ao carregar
+window.onload = aplicarPreferencia;
+
+// Evento do switch
+switchDark.addEventListener("change", toggleDarkMode);

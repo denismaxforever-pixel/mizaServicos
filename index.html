@@ -1,145 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montagem Soluções Master</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- SEO -->
-    <meta name="description"
-        content="Montagem e desmontagem de móveis, instalação de prateleiras e soluções inteligentes para sua casa.">
-    <meta name="keywords" content="montagem de móveis, desmontagem, prateleiras, organização, reparos, escritório">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montagem Soluções Master</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
-    <!-- Navbar -->
-    <div class="dark-mode-toggle">
-        <input type="checkbox" id="switchDark" onchange="toggleDarkMode()">
-        <label for="switchDark" class="slider"></label>
+  <!-- Botão Dark Mode -->
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="switchDark">
+    <label for="switchDark" class="slider"></label>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-menu">
+      <img src="logo.png.png" alt="Logo Montagem Soluções Master">
+      <span class="menu-toggle"><i class="fas fa-bars"></i></span>
+      <ul>
+        <li><a href="#servicos" class="active">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </div>
-    
-    <nav class="navbar">
-        <div class="logo-menu">
-            <img src="logo.png.png" alt="Logo Montagem Soluções Master">
-            <span class="menu-toggle"><i class="fas fa-bars"></i></span>
-            <ul>
-                <li><a href="#servicos" class="active">Serviços</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
+  </nav>
 
-    <!-- Cabeçalho -->
-    <header class="hero fade-in">
-        <h1>Transformamos seu lar com cuidado e eficiência</h1>
-        <p>Montagem e desmontagem de móveis, instalação de prateleiras e soluções inteligentes para deixar sua casa
-            organizada e funcional.</p>
-        <div class="cta">
-            <a href="#" onclick="enviarOrcamento()">Solicite um orçamento agora</a>
-        </div>
-    </header>
-
-    <!-- Serviços -->
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <div class="services-list">
-            <div class="service-item fade-in">
-                <i class="fas fa-couch"></i>
-                <h3>Montagem e Desmontagem de Móveis</h3>
-                <p>Guarda-roupas, camas, estantes e muito mais.</p>
-            </div>
-            <div class="service-item fade-in">
-                <i class="fas fa-layer-group"></i>
-                <h3>Instalação de Prateleiras</h3>
-                <p>Organização prática e segura para qualquer ambiente.</p>
-            </div>
-            <div class="service-item fade-in">
-                <i class="fas fa-briefcase"></i>
-                <h3>Organização de Escritórios</h3>
-                <p>Espaços planejados para produtividade e conforto.</p>
-            </div>
-            <div class="service-item fade-in">
-                <i class="fas fa-tools"></i>
-                <h3>Pequenos Reparos</h3>
-                <p>Ajustes rápidos com qualidade e confiança.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfólio -->
-    <section id="portfolio">
-        <h2>Portfólio</h2>
-        <p>Confira alguns dos trabalhos já realizados:</p>
-        <div class="gallery">
-            <div class="gallery-item fade-in">
-                <img src="mizael.jpeg.jpeg" alt="Montagem de guarda-roupa" onclick="abrirModal(this)">
-                <p>Montagem de guarda-roupa</p>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="img/montagem2.jpg" alt="Instalação de prateleiras" onclick="abrirModal(this)">
-                <p>Instalação de prateleiras</p>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="img/montagem3.jpg" alt="Organização de escritório" onclick="abrirModal(this)">
-                <p>Organização de escritório</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal da galeria -->
-    <div id="modal" class="modal">
-        <span class="close" onclick="fecharModal()">&times;</span>
-        <img class="modal-content" id="imgModal">
-        <div id="caption"></div>
+  <!-- Cabeçalho -->
+  <header class="hero fade-in">
+    <h1>Transformamos seu lar com cuidado e eficiência</h1>
+    <p>Montagem e desmontagem de móveis, instalação de prateleiras e soluções inteligentes para deixar sua casa organizada e funcional.</p>
+    <div class="cta">
+      <a href="#" onclick="enviarOrcamento()">Solicite um orçamento agora</a>
     </div>
+  </header>
 
-    <!-- Contato -->
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato e agende sua montagem:</p>
-        <p><strong>Telefone:</strong> (96) 99132-9948</p>
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="services-list">
+      <div class="service-item fade-in">
+        <i class="fas fa-couch"></i>
+        <h3>Montagem e Desmontagem de Móveis</h3>
+        <p>Guarda-roupas, camas, estantes e muito mais.</p>
+      </div>
+      <div class="service-item fade-in">
+        <i class="fas fa-layer-group"></i>
+        <h3>Instalação de Prateleiras</h3>
+        <p>Organização prática e segura para qualquer ambiente.</p>
+      </div>
+      <div class="service-item fade-in">
+        <i class="fas fa-briefcase"></i>
+        <h3>Organização de Escritórios</h3>
+        <p>Espaços planejados para produtividade e conforto.</p>
+      </div>
+      <div class="service-item fade-in">
+        <i class="fas fa-tools"></i>
+        <h3>Pequenos Reparos</h3>
+        <p>Ajustes rápidos com qualidade e confiança.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Portfólio -->
+  <section id="portfolio">
+    <h2>Portfólio</h2>
+    <p>Confira alguns dos trabalhos já realizados:</p>
+    <div class="gallery">
+      <div class="gallery-item fade-in">
+        <img src="mizael.jpeg.jpeg" alt="Montagem de guarda-roupa">
+        <p>Montagem de guarda-roupa</p>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="img/montagem2.jpg" alt="Instalação de prateleiras">
+        <p>Instalação de prateleiras</p>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="img/montagem3.jpg" alt="Organização de escritório">
+        <p>Organização de escritório</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato e agende sua montagem:</p>
+    <p><strong>Telefone:</strong> (96) 99132-9948</p>
 
-        <form class="contact-form" onsubmit="enviarWhatsApp(); return false;">
-            <input type="text" id="nome" placeholder="Seu nome" required>
-            <input type="tel" id="telefone" placeholder="Seu telefone" required>
-            <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
-            <button type="submit">Enviar pelo WhatsApp</button>
-            <div id="feedback"></div>
-        </form>
+    <form class="contact-form" onsubmit="enviarWhatsApp(); return false;">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="tel" id="telefone" placeholder="Seu telefone" required>
+      <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar pelo WhatsApp</button>
+      <div id="feedback"></div>
+    </form>
+  </section>
 
-        <div class="social">
-            <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=m53vkbo"
-                target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="mailto:mizaeloliveira1013@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
-        </div>
-    </section>
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2026 Montagem Soluções Master - Todos os direitos reservados</p>
+  </footer>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Montagem Soluções Master - Todos os direitos reservados</p>
-        <div class="footer-social">
-            <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=m53vkbo"
-                target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:mizaeloliveira1013@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </footer>
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5596991329948" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <!-- Botão flutuante WhatsApp -->
-    <a href="https://wa.me/5596991329948" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
