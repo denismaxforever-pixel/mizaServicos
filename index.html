@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Montagem Soluções Master</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome para ícones -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Montagem e desmontagem de móveis, instalação de prateleiras e soluções inteligentes para sua casa.">
+    <meta name="keywords" content="montagem de móveis, desmontagem, prateleiras, organização, reparos, escritório">
 </head>
 
 <body>
 
-    <!-- Navbar com logo e menu -->
+    <!-- Navbar -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="switchDark" onchange="toggleDarkMode()">
+        <label for="switchDark" class="slider"></label>
+    </div>
+    
     <nav class="navbar">
         <div class="logo-menu">
             <img src="logo.png.png" alt="Logo Montagem Soluções Master">
-            <!-- Botão hambúrguer -->
             <span class="menu-toggle"><i class="fas fa-bars"></i></span>
             <ul>
                 <li><a href="#servicos" class="active">Serviços</a></li>
@@ -27,7 +36,7 @@
     </nav>
 
     <!-- Cabeçalho -->
-    <header class="hero">
+    <header class="hero fade-in">
         <h1>Transformamos seu lar com cuidado e eficiência</h1>
         <p>Montagem e desmontagem de móveis, instalação de prateleiras e soluções inteligentes para deixar sua casa
             organizada e funcional.</p>
@@ -40,22 +49,22 @@
     <section id="servicos">
         <h2>Serviços</h2>
         <div class="services-list">
-            <div class="service-item">
+            <div class="service-item fade-in">
                 <i class="fas fa-couch"></i>
                 <h3>Montagem e Desmontagem de Móveis</h3>
                 <p>Guarda-roupas, camas, estantes e muito mais.</p>
             </div>
-            <div class="service-item">
+            <div class="service-item fade-in">
                 <i class="fas fa-layer-group"></i>
                 <h3>Instalação de Prateleiras</h3>
                 <p>Organização prática e segura para qualquer ambiente.</p>
             </div>
-            <div class="service-item">
+            <div class="service-item fade-in">
                 <i class="fas fa-briefcase"></i>
                 <h3>Organização de Escritórios</h3>
                 <p>Espaços planejados para produtividade e conforto.</p>
             </div>
-            <div class="service-item">
+            <div class="service-item fade-in">
                 <i class="fas fa-tools"></i>
                 <h3>Pequenos Reparos</h3>
                 <p>Ajustes rápidos com qualidade e confiança.</p>
@@ -68,20 +77,27 @@
         <h2>Portfólio</h2>
         <p>Confira alguns dos trabalhos já realizados:</p>
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="mizael.jpeg.jpeg" alt="Montagem de guarda-roupa">
+            <div class="gallery-item fade-in">
+                <img src="mizael.jpeg.jpeg" alt="Montagem de guarda-roupa" onclick="abrirModal(this)">
                 <p>Montagem de guarda-roupa</p>
             </div>
-            <div class="gallery-item">
-                <img src="img/montagem2.jpg" alt="Instalação de prateleiras">
+            <div class="gallery-item fade-in">
+                <img src="img/montagem2.jpg" alt="Instalação de prateleiras" onclick="abrirModal(this)">
                 <p>Instalação de prateleiras</p>
             </div>
-            <div class="gallery-item">
-                <img src="img/montagem3.jpg" alt="Organização de escritório">
+            <div class="gallery-item fade-in">
+                <img src="img/montagem3.jpg" alt="Organização de escritório" onclick="abrirModal(this)">
                 <p>Organização de escritório</p>
             </div>
         </div>
     </section>
+
+    <!-- Modal da galeria -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <div id="caption"></div>
+    </div>
 
     <!-- Contato -->
     <section id="contato">
@@ -89,11 +105,14 @@
         <p>Entre em contato e agende sua montagem:</p>
         <p><strong>Telefone:</strong> (96) 99132-9948</p>
 
+
+
         <form class="contact-form" onsubmit="enviarWhatsApp(); return false;">
             <input type="text" id="nome" placeholder="Seu nome" required>
             <input type="tel" id="telefone" placeholder="Seu telefone" required>
             <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
             <button type="submit">Enviar pelo WhatsApp</button>
+            <div id="feedback"></div>
         </form>
 
         <div class="social">
@@ -113,39 +132,14 @@
         </div>
     </footer>
 
+    <!-- Botão flutuante WhatsApp -->
+    <a href="https://wa.me/5596991329948" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Scripts -->
-    <script>
-        // WhatsApp
-        function enviarWhatsApp() {
-            var nome = document.getElementById("nome").value;
-            var telefone = document.getElementById("telefone").value;
-            var mensagem = document.getElementById("mensagem").value;
-
-            var numero = "5596991329948"; // seu número WhatsApp
-            var texto = "Olá, meu nome é " + nome +
-                ". Telefone: " + telefone +
-                ". Mensagem: " + mensagem;
-
-            var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
-            window.open(url, "_blank");
-        }
-
-        function enviarOrcamento() {
-            var numero = "5596991329948"; // seu número WhatsApp
-            var texto = "Olá, gostaria de solicitar um orçamento para montagem de móveis.";
-            var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
-            window.open(url, "_blank");
-        }
-
-        // Menu hambúrguer
-        const toggle = document.querySelector('.menu-toggle');
-        const logoMenu = document.querySelector('.logo-menu');
-
-        toggle.addEventListener('click', () => {
-            logoMenu.classList.toggle('active');
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>
