@@ -11,13 +11,11 @@ function enviarWhatsApp() {
 
   window.open(url, "_blank");
 
-  // Feedback visual
   const feedback = document.getElementById("feedback");
   feedback.innerText = "✅ Mensagem enviada! Você será redirecionado para o WhatsApp.";
   feedback.style.display = "block";
 }
 
-// Dark Mode com memória
 const switchDark = document.getElementById("switchDark");
 
 function aplicarPreferencia() {
@@ -36,8 +34,24 @@ function toggleDarkMode() {
   }
 }
 
-// Inicializa ao carregar
-window.onload = aplicarPreferencia;
+function ativarLinkMenu() {
+  document.querySelectorAll('.logo-menu a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+      document.querySelectorAll('.logo-menu a').forEach(function(item) {
+        item.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+}
 
-// Evento do switch
+window.onload = function() {
+  aplicarPreferencia();
+  ativarLinkMenu();
+};
+
 switchDark.addEventListener("change", toggleDarkMode);
